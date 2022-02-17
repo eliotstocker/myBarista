@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Pressure">
+        <androidx.preference.SeekBarPreference
+            android:key="__device_pref_pp1"
+            android:title="At start of pull"
+            android:summary="%s, default: 100 %%"
+            android:defaultValue="100"
+            android:max="100"
+            android:min="0" />
+
+        <androidx.preference.SeekBarPreference
+            android:key="__device_pref_pp2"
+            android:title="At end of pull"
+            android:summary="%s, default: 100 %%"
+            android:defaultValue="100"
+            android:max="100"
+            android:min="0" />
+
+        <androidx.preference.SeekBarPreference
+            android:key="__device_pref_ppt"
+            android:title="Period"
+            android:summary="%s, default: 25 s"
+            android:defaultValue="25"
+            android:max="60"
+            android:min="0" />
+    </PreferenceCategory>
+    <Preference android:title="Help" >
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://www.mecoffee.nl/mebarista/help/pressure" />
+    </Preference>
+</PreferenceScreen>

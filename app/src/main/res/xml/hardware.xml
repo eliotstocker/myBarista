@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Hardware">
+        <SwitchPreference
+            android:key="__device_pref_tmrpwr"
+            android:title="Installed as timer"
+            android:summary="Prevent warmup after power outage or cold boot"
+            android:enabled="true"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="__device_pref_pwrflp"
+            android:title="Power button flips back"
+            android:summary="Enable Silvia V5 power button or similar"
+            android:enabled="true"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+    <Preference android:title="Help" >
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://www.mecoffee.nl/mebarista/help/hardware/" />
+    </Preference>
+</PreferenceScreen>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="Timers">
+        <androidx.preference.SeekBarPreference
+            app:key="__device_pref_tmrosd"
+            app:title="Auto shutoff time"
+            app:summary="%s minutes, default: 60 minutes"
+            app:defaultValue="60"
+            android:max="120"
+            app:min="0"
+            />
+
+        <SwitchPreference
+            android:key="__device_pref_tmrwnbl"
+            android:title="Enable"
+            android:summary="Automatically turn machine on at a certain time"
+            android:defaultValue="false" />
+
+        <tv.piratemedia.ui.settings.pref.TimePreference
+            android:id="@+id/__device_pref_tmron"
+            android:dependency="__device_pref_tmrwnbl"
+            android:key="__device_pref_tmron"
+            android:title="Wakeup time"
+            />
+
+        <SwitchPreference
+            android:key="__device_pref_tmrsnbl"
+            android:title="Enable"
+            android:summary="Automatically turn machine off at a certain time"
+            android:enabled="true"
+            android:defaultValue="false" />
+
+        <tv.piratemedia.ui.settings.pref.TimePreference
+            android:id="@+id/__device_pref_tmroff"
+            android:dependency="__device_pref_tmrsnbl"
+            android:key="__device_pref_tmroff"
+            android:defaultValue="3"
+            android:title="Shutdown time"
+            android:enabled="true" />
+    </PreferenceCategory>
+    <Preference android:title="Help" >
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://www.mecoffee.nl/mebarista/help/timer/" />
+
+    </Preference>
+</PreferenceScreen>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="Temperature">
+        <SwitchPreference
+            app:key="__device_pref_tmpcntns"
+            app:title="Continuous mode"
+            app:summary="Instead of using an interval, dim the boiler"
+            app:defaultValue="false" />
+
+        <tv.piratemedia.ui.settings.pref.FloatSeekBarPreference
+            app:key="__device_pref_tmpsp"
+            app:title="Brew Temperature (˚C)"
+            app:summary="Boiler Temp for Coffee Brewing (default: 101°C)"
+            android:defaultValue="101"
+            app:maxValue="125"
+            app:stepSize="0.5"
+            app:minValue="50"/>
+
+        <tv.piratemedia.ui.settings.pref.FloatSeekBarPreference
+            app:key="__device_pref_tmpstm"
+            app:title="Steam Temperature (˚C)"
+            app:summary="Boiler Temp for Milk Streaming (default: 125°C)"
+            android:defaultValue="125"
+            app:maxValue="140"
+            app:stepSize="0.5"
+            app:minValue="110"/>
+
+        <androidx.preference.SeekBarPreference
+            app:key="__device_pref_tmppap"
+            app:title="Proactive Percentage"
+            app:summary="%s, default: 33 %%"
+            app:defaultValue="33"
+            android:max="100"
+            app:min="0"/>
+
+        <Preference
+            app:title="PID"
+            app:summary="Advanced PID control"
+            app:fragment="tv.piratemedia.ui.settings.PidPrefsFragment"/>
+        </PreferenceCategory>
+
+        <Preference android:title="Help" >
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://www.mecoffee.nl/mebarista/help/temperature/" />
+    </Preference>
+</PreferenceScreen>

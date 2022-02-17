@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Bluetooth">
+        <EditTextPreference
+            android:id="@+id/bt_devicename"
+            android:key="btname"
+            android:defaultValue="meCoffee"
+            android:title="Device name"
+            android:summary="Connected device has name '%s'"
+            />
+
+        <EditTextPreference
+            android:id="@+id/bt_devicename_prefix"
+            android:key="bt_devicename_prefix"
+            android:defaultValue="meCoffee"
+            android:title="Device name prefix"
+            android:summary="Devices which names start with '%s' will be automatically connected"
+            />
+
+    </PreferenceCategory>
+    <Preference android:title="Help" >
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://www.mecoffee.nl/mebarista/help/bluetooth/" />
+    </Preference>
+</PreferenceScreen>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="Pre-Infusion">
+        <androidx.preference.SeekBarPreference
+            android:key="__device_pref_shtmx"
+            android:title="Max shot time"
+            android:summary="%s, default: 60 s"
+            android:defaultValue="60"
+            android:max="60"
+            android:min="0" />
+
+        <SwitchPreference
+            android:key="__device_pref_pinbl"
+            android:title="Enable"
+            android:summary="Fill the puck first and pull the shot a couple of seconds later"
+            android:defaultValue="true" />
+
+        <tv.piratemedia.ui.settings.pref.FloatSeekBarPreference
+            android:key="__device_pref_pistrt"
+            android:dependency="__device_pref_pinbl"
+            android:title="Pump time"
+            android:summary="Time to run pump for pre-infusion (default: 3s)"
+            android:defaultValue="3.0"
+            app:maxValue="10.0"
+            app:stepSize="0.5"
+            app:minValue="0" />
+
+        <SwitchPreference
+            android:key="__device_pref_pivlv"
+            android:dependency="__device_pref_pinbl"
+            android:title="Close valve while paused"
+            android:summary=""
+            android:defaultValue="false" />
+
+        <tv.piratemedia.ui.settings.pref.FloatSeekBarPreference
+            android:key="__device_pref_piprd"
+            android:dependency="__device_pref_pinbl"
+            android:title="Pause time"
+            android:summary="Time to wait after pre-infusion before shot (default: 3s)"
+            android:defaultValue="3.0"
+            app:maxValue="10.0"
+            app:stepSize="0.5"
+            app:minValue="0" />
+    </PreferenceCategory>
+
+    <Preference android:title="Help" >
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://www.mecoffee.nl/mebarista/help/preinfusion/" />
+    </Preference>
+</PreferenceScreen>

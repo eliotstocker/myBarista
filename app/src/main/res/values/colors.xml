@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="day_toolbar">#fafafa</color>
+    <color name="day_toolbar_light">#ffffff</color>
+    <color name="day_toolbar_dark">#c7c7c7</color>
+    <color name="night_toolbar">#212121</color>
+    <color name="night_toolbar_light">#484848</color>
+    <color name="night_toolbar_dark">#000000</color>
+    <color name="primary">#4dd0e1</color>
+    <color name="primary_light">#88ffff</color>
+    <color name="primary_dark">#009faf</color>
+
+    <color name="secondary">#546e7a</color>
+    <color name="secondary_light">#819ca9</color>
+    <color name="secondary_dark">#29434e</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="chart_labels">#FFEEEEEE</color>
+</resources>

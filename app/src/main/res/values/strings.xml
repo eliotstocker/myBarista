@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">myBarister</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_app">Brew</string>
+    <string name="menu_settings">Settings</string>
+
+    <string name="rationale_scan_permission">In order to find your coffee machine we need permission to scan for devices.</string>
+    <string name="rationale_location_permission">In order to find your coffee machine we need permission to access location, this is required for the scan on older android device, you location will not be used or transmitted however.</string>
+
+    <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="boiler_indicator_title">Boiler Power</string>
+    <string name="shot_timer_title">Shot Timer</string>
+    <string name="shot_timer_close">Close</string>
+    <string name="temp_view_title">Temperature</string>
+    <string name="setpoint_view_title">Set Point</string>
+</resources>

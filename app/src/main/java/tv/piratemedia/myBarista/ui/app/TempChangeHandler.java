@@ -17,16 +17,18 @@ public class TempChangeHandler implements NumberPicker.OnNumberPickerChangeListe
     }
 
     @Override
-    public void onProgressChanged(@NonNull NumberPicker numberPicker, float v, boolean b) {
-        String key = "__device_pref_tmpsp";
-        SharedPreferences sharedPreferences =
-                PreferenceManager.getDefaultSharedPreferences(activity);
-        SharedPreferences.Editor prefEditor = sharedPreferences.edit();
+    public void onProgressChanged(@NonNull NumberPicker numberPicker, float value, boolean fromUser) {
+        if(fromUser) {
+            String key = "__device_pref_tmpsp";
+            SharedPreferences sharedPreferences =
+                    PreferenceManager.getDefaultSharedPreferences(activity);
+            SharedPreferences.Editor prefEditor = sharedPreferences.edit();
 
-        prefEditor.putFloat(key, v);
-        prefEditor.commit();
+            prefEditor.putFloat(key, value);
+            prefEditor.commit();
 
-        ((MainActivity)activity).sendRemotePrefValue(key);
+            ((MainActivity) activity).sendRemotePrefValue(key);
+        }
     }
 
     @Override

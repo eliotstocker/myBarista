@@ -27,7 +27,7 @@ public final class FloatSeekBarPreference extends Preference implements OnSeekBa
     public FloatSeekBarPreference(@NotNull Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
 
-        this.setWidgetLayoutResource(1300003);
+        this.setWidgetLayoutResource(R.layout.pref_float_seekbar);
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.FloatSeekBarPreference, defStyleAttr, defStyleRes);
         this.minValue = ta.getFloat(R.styleable.FloatSeekBarPreference_minValue, 0.0F);
         this.maxValue = ta.getFloat(R.styleable.FloatSeekBarPreference_maxValue, 1.0F);

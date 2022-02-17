@@ -6,8 +6,9 @@
         <androidx.preference.SeekBarPreference
             android:key="__device_pref_shtmx"
             android:title="Max shot time"
-            android:summary="%s, default: 60 s"
+            android:summary="Auto shutoff after a number of seconds (default: 60s)"
             android:defaultValue="60"
+            app:showSeekBarValue="true"
             android:max="60"
             android:min="0" />
 
@@ -31,7 +32,6 @@
             android:key="__device_pref_pivlv"
             android:dependency="__device_pref_pinbl"
             android:title="Close valve while paused"
-            android:summary=""
             android:defaultValue="false" />
 
         <tv.piratemedia.myBarista.ui.settings.pref.FloatSeekBarPreference

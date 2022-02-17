@@ -6,15 +6,16 @@
         <androidx.preference.SeekBarPreference
             app:key="__device_pref_pd1p"
             app:title="Proportional component ( P )"
-            app:summary="%s, default: 20"
+            app:summary="Proportional component (default: 20)"
             app:defaultValue="20"
+            app:showSeekBarValue="true"
             android:max="100"
             app:min="0"/>
 
         <tv.piratemedia.myBarista.ui.settings.pref.FloatSeekBarPreference
             app:key="__device_pref_pd1i"
             app:title="Integral component ( I )"
-            app:summary="%s, default: 0.3"
+            app:summary="Integral component (default: 0.3)"
             app:defaultValue="0.3"
             app:maxValue="1"
             app:minValue="0"/>
@@ -22,32 +23,36 @@
         <androidx.preference.SeekBarPreference
             android:key="__device_pref_pd1d"
             android:title="Derivative component ( D )"
-            android:summary="%s, default: 128"
+            android:summary="Derivative component (default: 128)"
             android:defaultValue="128"
+            app:showSeekBarValue="true"
             android:max="256"
             android:min="0"/>
 
         <androidx.preference.SeekBarPreference
             android:key="__device_pref_pd1imm"
             android:title="Integral ( I ) wind-down minimum"
-            android:summary="%s, default: 5"
+            android:summary="The minimum maintenance power, limiting this helps overshoots and oscillation (default: 5)"
             android:defaultValue="0"
+            app:showSeekBarValue="true"
             android:max="100"
             android:min="0"/>
 
         <androidx.preference.SeekBarPreference
             android:key="__device_pref_pd1imx"
             android:title="Integral ( I ) wind-down limit"
-            android:summary="%s, default: 20"
+            android:summary="The maximum maintenance power, limiting this helps overshoots and oscillation (default: 20)"
             android:defaultValue="20"
+            app:showSeekBarValue="true"
             android:max="100"
             android:min="0" />
 
         <androidx.preference.SeekBarPreference
             android:key="__device_pref_pd1sz"
             android:title="Polling interval"
-            android:summary="%s, default: 1000 ms"
+            android:summary="Frequency of updates (default: 1000ms)"
             android:defaultValue="1000"
+            app:showSeekBarValue="true"
             android:max="10000"
             android:min="1000" />
     </PreferenceCategory>

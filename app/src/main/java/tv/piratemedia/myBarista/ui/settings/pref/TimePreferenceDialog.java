@@ -48,22 +48,6 @@ public class TimePreferenceDialog extends PreferenceDialogFragmentCompat {
             mTimePicker.setHour(hours);
             mTimePicker.setMinute(minutes);
         }
-
-        view.findViewById(R.id.button_cancel).setOnClickListener(v -> {
-            onClick(requireDialog(), DialogInterface.BUTTON_NEGATIVE);
-            Dialog dialog = getDialog();
-            if (dialog != null) {
-                dialog.dismiss();
-            }
-        });
-
-        view.findViewById(R.id.button_okay).setOnClickListener(v -> {
-            onClick(requireDialog(), DialogInterface.BUTTON_POSITIVE);
-            Dialog dialog = getDialog();
-            if (dialog != null) {
-                dialog.dismiss();
-            }
-        });
     }
 
     @Override

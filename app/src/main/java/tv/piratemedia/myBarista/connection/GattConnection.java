@@ -119,7 +119,7 @@ public class GattConnection extends BluetoothGattCallback {
     public void onCharacteristicWrite(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic, int status) {
         super.onCharacteristicWrite(gatt, characteristic, status);
         if (status != BluetoothGatt.GATT_SUCCESS) {
-            Log.e("GattConnection", "Cant Write to Device");
+            Log.e("GattConnection", "Cant Write to Device status: " + status);
         }
     }
 

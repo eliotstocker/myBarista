@@ -30,8 +30,9 @@
         <androidx.preference.SeekBarPreference
             app:key="__device_pref_tmppap"
             app:title="Proactive Percentage"
-            app:summary="%s, default: 33 %%"
+            app:summary="The amount power to atomatically set on the boiler when starting to pull a shot (default: 33%)"
             app:defaultValue="33"
+            app:showSeekBarValue="true"
             android:max="100"
             app:min="0"/>
 

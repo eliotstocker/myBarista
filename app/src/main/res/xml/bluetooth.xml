@@ -3,19 +3,11 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="Bluetooth">
         <EditTextPreference
-            android:id="@+id/bt_devicename"
-            android:key="btname"
-            android:defaultValue="meCoffee"
-            android:title="Device name"
-            android:summary="Connected device has name '%s'"
-            />
-
-        <EditTextPreference
             android:id="@+id/bt_devicename_prefix"
             android:key="bt_devicename_prefix"
             android:defaultValue="meCoffee"
             android:title="Device name prefix"
-            android:summary="Devices which names start with '%s' will be automatically connected"
+            android:summary="Devices which names start with the current setting will be automatically connected"
             />
 
     </PreferenceCategory>

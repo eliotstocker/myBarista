@@ -119,10 +119,9 @@ public class RemoteSettingsUtils {
                 break;
         }
 
-        String cmd = "cmd set " + actualName + " " + sendValue + " OK\r\n";
+        String cmd = "\r\ncmd set " + actualName + " " + sendValue + " OK\r\n";
         characteristic.setValue(cmd);
 
-        gatt.beginReliableWrite();
         if(!gatt.writeCharacteristic(characteristic))
             Log.e("RemoteSettingsWrite", "Failed: " + cmd);
     }

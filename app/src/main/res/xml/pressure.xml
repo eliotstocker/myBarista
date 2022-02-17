@@ -1,28 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory android:title="Pressure">
         <androidx.preference.SeekBarPreference
             android:key="__device_pref_pp1"
             android:title="At start of pull"
-            android:summary="%s, default: 100 %%"
+            android:summary="Pressure at shot start (default: 100%)"
             android:defaultValue="100"
+            app:showSeekBarValue="true"
             android:max="100"
             android:min="0" />
 
         <androidx.preference.SeekBarPreference
             android:key="__device_pref_pp2"
             android:title="At end of pull"
-            android:summary="%s, default: 100 %%"
+            android:summary="Pressure at end of Period (default: 100%)"
             android:defaultValue="100"
+            app:showSeekBarValue="true"
             android:max="100"
             android:min="0" />
 
         <androidx.preference.SeekBarPreference
             android:key="__device_pref_ppt"
             android:title="Period"
-            android:summary="%s, default: 25 s"
+            android:summary="Ramp time from start to end (default: 25s)"
             android:defaultValue="25"
+            app:showSeekBarValue="true"
             android:max="60"
             android:min="0" />
     </PreferenceCategory>

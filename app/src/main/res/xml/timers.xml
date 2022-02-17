@@ -6,8 +6,9 @@
         <androidx.preference.SeekBarPreference
             app:key="__device_pref_tmrosd"
             app:title="Auto shutoff time"
-            app:summary="%s minutes, default: 60 minutes"
+            app:summary="How long to start on after startup befor auto shutdown (default: 60m)"
             app:defaultValue="60"
+            app:showSeekBarValue="true"
             android:max="120"
             app:min="0"
             />
@@ -22,7 +23,9 @@
             android:id="@+id/__device_pref_tmron"
             android:dependency="__device_pref_tmrwnbl"
             android:key="__device_pref_tmron"
+            android:summary="select time at which the machine should automatically turn on"
             android:title="Wakeup time"
+            app:allowDividerAbove="false"
             />
 
         <SwitchPreference
@@ -38,7 +41,10 @@
             android:key="__device_pref_tmroff"
             android:defaultValue="3"
             android:title="Shutdown time"
-            android:enabled="true" />
+            android:summary="select time at which the machine should automatically turn on"
+            android:enabled="true"
+            app:allowDividerAbove="false"
+            />
     </PreferenceCategory>
     <Preference android:title="Help" >
         <intent

@@ -68,8 +68,6 @@ public class BLE {
                 .setServiceUuid(new ParcelUuid(UUID.fromString("0000ffe0-0000-1000-8000-00805f9b34fb")))
                 .build();
 
-        Log.d("BLEService", "startScan");
-
         getBluetoothLeScanner().startScan(Collections.singletonList(scanFilter), scanSettings, new ScanCallback() {
             @Override
             public void onScanResult(int callbackType, ScanResult result) {

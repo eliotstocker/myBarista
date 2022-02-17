@@ -18,7 +18,8 @@ public class TimePreference extends DialogPreference {
     }
 
     public TimePreference(Context context, AttributeSet attrs) {
-        this(context, attrs, android.R.attr.preferenceStyle);
+        this(context, attrs, android.R.attr.dialogPreferenceStyle);
+        this.setIconSpaceReserved(true);
     }
 
     public TimePreference(Context context, AttributeSet attrs, int defStyleAttr) {

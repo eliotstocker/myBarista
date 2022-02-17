@@ -16,5 +16,5 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="chart_labels">#FFEEEEEE</color>
+    <color name="chart_labels">#FF111111</color>
 </resources>

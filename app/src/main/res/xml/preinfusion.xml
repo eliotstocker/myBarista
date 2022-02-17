@@ -17,7 +17,7 @@
             android:summary="Fill the puck first and pull the shot a couple of seconds later"
             android:defaultValue="true" />
 
-        <tv.piratemedia.ui.settings.pref.FloatSeekBarPreference
+        <tv.piratemedia.myBarista.ui.settings.pref.FloatSeekBarPreference
             android:key="__device_pref_pistrt"
             android:dependency="__device_pref_pinbl"
             android:title="Pump time"
@@ -34,7 +34,7 @@
             android:summary=""
             android:defaultValue="false" />
 
-        <tv.piratemedia.ui.settings.pref.FloatSeekBarPreference
+        <tv.piratemedia.myBarista.ui.settings.pref.FloatSeekBarPreference
             android:key="__device_pref_piprd"
             android:dependency="__device_pref_pinbl"
             android:title="Pause time"

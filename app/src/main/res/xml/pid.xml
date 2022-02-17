@@ -11,7 +11,7 @@
             android:max="100"
             app:min="0"/>
 
-        <tv.piratemedia.ui.settings.pref.FloatSeekBarPreference
+        <tv.piratemedia.myBarista.ui.settings.pref.FloatSeekBarPreference
             app:key="__device_pref_pd1i"
             app:title="Integral component ( I )"
             app:summary="%s, default: 0.3"

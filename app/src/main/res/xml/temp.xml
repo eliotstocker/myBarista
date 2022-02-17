@@ -9,7 +9,7 @@
             app:summary="Instead of using an interval, dim the boiler"
             app:defaultValue="false" />
 
-        <tv.piratemedia.ui.settings.pref.FloatSeekBarPreference
+        <tv.piratemedia.myBarista.ui.settings.pref.FloatSeekBarPreference
             app:key="__device_pref_tmpsp"
             app:title="Brew Temperature (˚C)"
             app:summary="Boiler Temp for Coffee Brewing (default: 101°C)"
@@ -18,7 +18,7 @@
             app:stepSize="0.5"
             app:minValue="50"/>
 
-        <tv.piratemedia.ui.settings.pref.FloatSeekBarPreference
+        <tv.piratemedia.myBarista.ui.settings.pref.FloatSeekBarPreference
             app:key="__device_pref_tmpstm"
             app:title="Steam Temperature (˚C)"
             app:summary="Boiler Temp for Milk Streaming (default: 125°C)"

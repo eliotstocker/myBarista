@@ -18,7 +18,7 @@
             android:summary="Automatically turn machine on at a certain time"
             android:defaultValue="false" />
 
-        <tv.piratemedia.ui.settings.pref.TimePreference
+        <tv.piratemedia.myBarista.ui.settings.pref.TimePreference
             android:id="@+id/__device_pref_tmron"
             android:dependency="__device_pref_tmrwnbl"
             android:key="__device_pref_tmron"
@@ -32,7 +32,7 @@
             android:enabled="true"
             android:defaultValue="false" />
 
-        <tv.piratemedia.ui.settings.pref.TimePreference
+        <tv.piratemedia.myBarista.ui.settings.pref.TimePreference
             android:id="@+id/__device_pref_tmroff"
             android:dependency="__device_pref_tmrsnbl"
             android:key="__device_pref_tmroff"

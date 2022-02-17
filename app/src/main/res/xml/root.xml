@@ -2,38 +2,38 @@
 
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
     <Preference
-        app:fragment="tv.piratemedia.ui.settings.TempPrefsFragment"
+        app:fragment="tv.piratemedia.myBarista.ui.settings.TempPrefsFragment"
         app:icon="@drawable/ic_temp"
         app:summary="Temperature Control Attributes"
         app:title="Temperature" />
 
     <Preference
-        app:fragment="tv.piratemedia.ui.settings.PressurePrefsFragment"
+        app:fragment="tv.piratemedia.myBarista.ui.settings.PressurePrefsFragment"
         app:icon="@drawable/ic_pressure"
         app:summary="Pressure Control Attributes"
         app:title="Pressure" />
 
     <Preference
-        app:fragment="tv.piratemedia.ui.settings.PreinfusionPrefsFragment"
+        app:fragment="tv.piratemedia.myBarista.ui.settings.PreinfusionPrefsFragment"
         app:icon="@drawable/ic_preinfusion"
         app:summary="Preinfusion Control Attributes"
         app:title="Preinfusion" />
 
     <Preference
-        app:fragment="tv.piratemedia.ui.settings.TimersPrefsFragment"
+        app:fragment="tv.piratemedia.myBarista.ui.settings.TimersPrefsFragment"
         app:icon="@drawable/ic_timer"
         app:summary="Timer Control Attributes"
         app:title="Timers" />
 
     <Preference
-        app:fragment="tv.piratemedia.ui.settings.HardwarePrefsFragment"
+        app:fragment="tv.piratemedia.myBarista.ui.settings.HardwarePrefsFragment"
         app:icon="@drawable/ic_hardware"
         app:summary="Hardware Attributes"
         app:title="Hardware" />
 
     <Preference
         app:key="pref_screen_bluetooth"
-        app:fragment="tv.piratemedia.ui.settings.BluetoothPrefsFragment"
+        app:fragment="tv.piratemedia.myBarista.ui.settings.BluetoothPrefsFragment"
         app:icon="@drawable/ic_bluetooth"
         app:summary="Bluetooth Control Attributes"
         app:title="Bluetooth" />

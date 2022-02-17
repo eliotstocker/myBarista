@@ -26,9 +26,9 @@ Much of this code was created by reading through the source of the original appl
 
 ## Known Issues and Todos
  - [ ] Not all settings are being applied correctly every time
- - [ ] Some elements of the dark theme are not being correctly applied
+ - [x] Some elements of the dark theme are not being correctly applied
  - [ ] Only BLE is supported
- - [ ] Some settings are missing
+ - [x] Some settings are missing
  - [ ] Some app crashed have been noticed but not fully identified
  - [ ] Android 12 bluetooth permissions are not yet fully working (cant find device on android 12 devices yet)
  - [ ] Icons etc not yet added

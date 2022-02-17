@@ -38,7 +38,7 @@
         <Preference
             app:title="PID"
             app:summary="Advanced PID control"
-            app:fragment="tv.piratemedia.ui.settings.PidPrefsFragment"/>
+            app:fragment="tv.piratemedia.myBarista.ui.settings.PidPrefsFragment"/>
         </PreferenceCategory>
 
         <Preference android:title="Help" >

@@ -71,6 +71,7 @@ public class AppFragment extends Fragment {
         appViewModel.getShotTimerValue().observe(getViewLifecycleOwner(), shotTimerMain::setText);
 
         shotTimerClose.setOnClickListener(AppViewModel::hideTimer);
+        setpointPicker.setNumberPickerChangeListener(new TempChangeHandler(requireActivity()));
 
         return root;
     }

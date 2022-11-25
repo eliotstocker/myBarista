@@ -4,6 +4,7 @@ import android.Manifest;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.WindowManager;
 
@@ -98,9 +99,12 @@ public class MainActivity extends AppCompatActivity implements
                     }
                     @Override
                     public void onDisconnect() {
-                        stopService();
-                        startServiceIfPermission();
                         disableScreenAlwaysOn();
+                        if(serviceRunning) {
+                            Log.d("onDisconnect", "restart service");
+                            stopService();
+                            startServiceIfPermission();
+                        }
                         SettingsViewModel.setConnected(false);
                     }
                     @Override
@@ -131,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements
             if(EasyPermissions.hasPermissions(this, Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT)) {
                 return true;
             }
-            EasyPermissions.requestPermissions(this, getString(R.string.rationale_scan_permission),501, Manifest.permission.BLUETOOTH_SCAN);
+            EasyPermissions.requestPermissions(this, getString(R.string.rationale_scan_permission),501, Manifest.permission.BLUETOOTH_SCAN, Manifest.permission.BLUETOOTH_CONNECT);
         } else {
             //on android <12 we need to request location permission
             if(EasyPermissions.hasPermissions(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
@@ -163,10 +167,10 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void stopService() {
+        serviceRunning = false;
         bleConnection.close();
         connectionExecutor.shutdownNow();
         connectionExecutor = Executors.newSingleThreadExecutor();
-        serviceRunning = false;
         AppViewModel.hideTimer();
     }
 
@@ -174,6 +178,7 @@ public class MainActivity extends AppCompatActivity implements
     protected void onStop() {
         stopService();
         super.onStop();
+        Log.d("onStop", "stop service");
     }
 
     @Override

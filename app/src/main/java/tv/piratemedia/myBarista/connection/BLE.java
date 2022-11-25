@@ -35,6 +35,8 @@ public class BLE {
     private BluetoothDevice bluetoothDevice;
     private BluetoothGattCharacteristic bluetoothCharacteristic;
 
+    private ScanCallback onScanComplete;
+
     public BLE(Context context, Handler handler) {
         this.context = context;
         this.handler = handler;
@@ -68,7 +70,7 @@ public class BLE {
                 .setServiceUuid(new ParcelUuid(UUID.fromString("0000ffe0-0000-1000-8000-00805f9b34fb")))
                 .build();
 
-        getBluetoothLeScanner().startScan(Collections.singletonList(scanFilter), scanSettings, new ScanCallback() {
+        onScanComplete = new ScanCallback() {
             @Override
             public void onScanResult(int callbackType, ScanResult result) {
                 super.onScanResult(callbackType, result);
@@ -77,6 +79,7 @@ public class BLE {
                     bluetoothDevice = result.getDevice();
 
                     bluetoothLeScanner.stopScan(this);
+                    onScanComplete = null;
                     notifyDeviceFound(bluetoothDevice);
 
                     bluetoothGatt = bluetoothDevice.connectGatt(context.getApplicationContext(), false, new GattConnection(context, handler, characteristic -> {
@@ -85,7 +88,9 @@ public class BLE {
                     }));
                 }
             }
-        });
+        };
+
+        getBluetoothLeScanner().startScan(Collections.singletonList(scanFilter), scanSettings, onScanComplete);
     }
 
     @SuppressLint("MissingPermission")
@@ -99,9 +104,13 @@ public class BLE {
 
     @SuppressLint("MissingPermission")
     public void close() {
+        if(onScanComplete != null) {
+            getBluetoothLeScanner().stopScan(onScanComplete);
+        }
         if(bluetoothGatt != null) {
             bluetoothGatt.close();
         }
+        onScanComplete = null;
         bluetoothGatt = null;
         bluetoothDevice = null;
     }

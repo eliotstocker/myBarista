@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements
     private BLE bleConnection;
     private Runnable connectionRunnable;
     private boolean serviceRunning = false;
+    private NavigationView mNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +56,14 @@ public class MainActivity extends AppCompatActivity implements
         assert navHostFragment != null;
         NavController navController = navHostFragment.getNavController();
 
-        NavigationView navigationView = binding.navView;
-        if (navigationView != null) {
+        mNavigationView = binding.navView;
+        if (mNavigationView != null) {
             mAppBarConfiguration = new AppBarConfiguration.Builder(
                     R.id.nav_app, R.id.nav_settings)
                     .setOpenableLayout(binding.drawerLayout)
                     .build();
             NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-            NavigationUI.setupWithNavController(navigationView, navController);
+            NavigationUI.setupWithNavController(mNavigationView, navController);
         }
 
         BottomNavigationView bottomNavigationView = binding.appBarMain.contentMain.bottomNavView;
@@ -96,6 +98,10 @@ public class MainActivity extends AppCompatActivity implements
                     @Override
                     public void onStatus(String status) {
                         AppViewModel.setConnectionStatus(status);
+                        if (mNavigationView != null) {
+                            TextView statusView = (TextView) mNavigationView.getHeaderView(0).findViewById(R.id.app_status);
+                            statusView.setText(status);
+                        }
                     }
                     @Override
                     public void onDisconnect() {

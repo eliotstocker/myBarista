@@ -108,12 +108,16 @@ public class AppViewModel extends AndroidViewModel {
                 }
             }, 100, 100);
         } else if(info.status.equals("end")) {
+            long timeVal = (System.currentTimeMillis() - timerStart);
             if(timer != null) {
                 timer.cancel();
                 timer.purge();
                 timer = null;
+            } else {
+                timeVal = info.time;
+                showTimer.setValue(true);
             }
-            shotTime.setValue((System.currentTimeMillis() - timerStart) / 1000.0);
+            shotTime.setValue(timeVal / 1000.0);
         }
     }
 
